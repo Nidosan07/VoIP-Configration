@@ -1,0 +1,88 @@
+[general]
+register => nido:1234@192.168.52.128/dwmi
+register => nido:abc@192.168.87.161/lahiru
+
+;us -> remote_server_password@remoet_ip/remote_ip
+
+context=default
+allowoverlap=no
+bindport=5060
+bindaddr=0.0.0.0
+disallow=all
+allow=ulaw       ; Audio codec
+allow=h264       ; Video codec
+allow=vp8        ; Alternative video codec
+videosupport=yes ; Enable video support
+transport=udp
+
+[1000]
+type=friend
+context=from-internal
+host=dynamic
+secret=1000
+disallow=all
+allow=ulaw
+allow=h264
+allow=vp8
+dtmfmode=rfc2833
+qualify=yes
+canreinvite=yes  ; Allow direct media, if supported by both endpoints
+
+[1001]
+type=friend
+context=from-internal
+host=dynamic
+secret=1001
+disallow=all
+allow=ulaw
+allow=h264
+allow=vp8
+dtmfmode=rfc2833
+qualify=yes
+canreinvite=yes
+
+[1004]
+type=friend
+host=dynamic
+secret=1004
+context=phones
+username=1004
+disallow=all
+allow=ulaw
+allow=alaw
+allow=g711
+
+
+
+[1005]
+type=friend
+host=dynamic
+secret=1005
+context=phones
+username=1005
+
+[1006]
+type=friend
+host=dynamic
+secret=1006
+context=phones
+username=1006
+
+;to connect with ur friend Friend credentials
+
+[dwmi]
+type=friend
+host=dynamic
+secret=1234
+context=fromdwmi
+disallow=all
+allow=ulaw
+
+
+[lahiru]
+type=friend
+host=dynamic
+secret=abc
+context=fromlahiru
+disallow=all
+allow=ulaw
