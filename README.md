@@ -5,6 +5,8 @@
 
 
 
+service asterisk restart
+
 asterisk -rx "core reload"
 
 #after went to asterisk -rcv we have to type this command to reload the sip file
